@@ -28,7 +28,7 @@ Since SPH is a "meshfree" method, no pre-defined connection is required between 
 
 The problem with high-level load-balancing was that most of the time, particles were much more dense in some areas than the others and this made the workload unequivalently distributed among the threads. Therefore, some threads were doing a lot of work (the ones with a lot of neighbors), some weren't doing much work or even not at all. For example in the picture below, the blue particle is doing 4x work compared to the green particle.
 
-![Particles](https://github.com/mhezarei/mhezarei.github.io/particles.png)
+![Particles](./particles.png)
 
 Our proposed method focused on distributing the workload equivalently among all the threads at each step. We showed that the computation overhead occurring at each step is negligible compared to the achieved performance gain. We also showed the potential of this method as many multi-GPU simulation frameworks could benefit from this new method of load-balancing.
 
