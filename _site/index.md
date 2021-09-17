@@ -1,6 +1,9 @@
 I'm a Computer Engineering student at [Shahid Beheshti University](https://www.sbu.ac.ir/), Tehran, Iran. I started my AI journey in 2019 with great enthusiasm for this field ever since. I've managed to apply my knowledge to both academic and industrial scenes as I'm currently **Research Assistant** in [Institute for Research in Fundamental Sciences (IPM)](http://www.ipm.ac.ir/) (Computer Science department) and **Data Scientist** in [Digikala](www.digikala.com).
 
-This website acts as a detailed version of [my CV](https://github.com/mhezarei/mhezarei.github.io/CV.pdf) where I explain my academic career and projects.
+This website acts as a detailed version of [my CV](./CV.pdf) where I explain my academic career and projects. Here are different sections to my website:
+
+- [Research](./research)
+- Academic Projects
 
 
 # Markdown
