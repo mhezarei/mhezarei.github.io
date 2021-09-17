@@ -1,8 +1,12 @@
+layout: page
+title: "Mohammad Hosein Zarei"
+permalink: /
+
 ## Mohammad Hosein Zarei
 
-You can use the [editor on GitHub](https://github.com/mhezarei/mhezarei.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+Hi! I'm Mohammad Hosein Zarei currently studying Computer Engineering in ![Shahid Beheshti University](https://www.sbu.ac.ir/), Tehran, Iran.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+I've 
 
 ### Markdown
 
