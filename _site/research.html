@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Mohammad Hosein Zarei | Welcome to my personal website!</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Mohammad Hosein Zarei" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Welcome to my personal website!" />
+<meta property="og:description" content="Welcome to my personal website!" />
+<link rel="canonical" href="http://localhost:4000/research.html" />
+<meta property="og:url" content="http://localhost:4000/research.html" />
+<meta property="og:site_name" content="Mohammad Hosein Zarei" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Mohammad Hosein Zarei" />
+<script type="application/ld+json">
+{"description":"Welcome to my personal website!","headline":"Mohammad Hosein Zarei","@type":"WebPage","url":"http://localhost:4000/research.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=ab1e52cc0675dd7005a48c58765c5a1a6ada5e77">
+    <script src="https://code.jquery.com/jquery-3.3.0.min.js" integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
+    <script src="/assets/js/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+
+      <header>
+        <h1>Mohammad Hosein Zarei</h1>
+        <p>Welcome to my personal website!</p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/mhezarei/mhezarei.github.io" class="button fork"><strong>View On GitHub</strong></a>
+        
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <p><a href="http://mhezarei.github.io">Back to Home</a></p>
+
+<h2 id="research"><font size="+10"><center>Research</center></font></h2>
+
+<p>For as long as I remember, I’ve always had a catch for developing ideas and finding innovative ways to solve existing problems. Until now, I’ve taken part in 3 different publications, explained below.</p>
+
+<h3 id="1-fault-prediction-in-competitive-programming-codes"><strong>1. Fault Prediction in Competitive Programming Codes</strong></h3>
+
+<p>There exists a lot of publications in which the authors tried to predict or analyze the faulty (buggy) areas in some projects. The scope of these fault-detectors were bounded to the modules. Our idea originally was to create a system capable of identifying and reporting the faulty areas of a program using the <strong>line-level</strong> features.</p>
+
+<p>Of course focusing the live-level features in a project as a whole is really difficult and that was why we focused our attention to a specific type of programs. Those written in only one file. Since there was no dataset available at the time (or at least we didn’t find any), we were compelled to create our own dataset and that’s where we chose the programs submitted to the <a href="http://codeforces.com">CodeForces</a> website.</p>
+
+<p>Our objective was to find faulty areas of a program and crawling every program in that website wouldn’t help at all. That’s why we only looked for programs which were <strong>Accepted</strong> by changing only a few lines. Yes! That was where the faults occurred.</p>
+
+<p>The dataset was made up of pairs of programs, one program in each pair was the <strong>Wrong Answer</strong> and the other one was the <strong>Accepted</strong> version. Around 96,000 programs were gathered which each of their lines labeled as either “False” (where the line wasn’t faulty), and “True” (where the line was buggy).</p>
+
+<p>Different features were then extract from the programs to build up the final dataset. Both semantical features and program-specific features (such as number of operands in each line) were considered.</p>
+
+<p>Finally, different machine learning models were used to predict the faulty areas in different/new programs and the best model achieved <strong>76% accuracy</strong>.</p>
+
+<h3 id="2-scalable-kernel-load-balancing-for-parallel-sph-simulation"><strong>2. Scalable Kernel Load-Balancing for Parallel SPH Simulation</strong></h3>
+
+<p>The <a href="https://en.wikipedia.org/wiki/Smoothed-particle_hydrodynamics">Smoothed Particle Hydrodynamics</a> is a method which tries to simulate the fluid flows and observe their behavior. Typically, a scenario is defined to help the simulation progress. One common scenario is called the “Dam Break” in which a fluid is kept behind a dam and released in order to start the simulation. Factors like fluid density, gravity, particle weight, etc control the simulation.</p>
+
+<p>SPH is a “meshfree” method meaning no pre-defined connection is required between the particles. This is what makes Graphics Processing Units (GPUs) one of the best environments to run the simulation on since every particle can be mapped to a thread. Most of the researches at the time were focused on how to load-balance the simulation when ran on multiple GPUs and none (at least to our knowledge) focused on load-balancing in the thread-level. That’s what made our work unique.</p>
+
+<p>The simulation procedure is mainly made from these steps:</p>
+<ol>
+  <li>Each particle computes the total amount of force it is receiving (including gravity, forces from neighboring particles).</li>
+  <li>Each particle then moves (based on a time step) towards the direction of the total force.</li>
+  <li>After every particle is moved, new frame is present and the procedure repeats until either some number of frames is reached, or the total force done to each particle is 0.</li>
+</ol>
+
+<p>The problem with high-level load-balancing was that most of the time, particles were much more dense in some areas than the others and this made the workload unequivalently distributed among the threads. Therefore, some threads were doing a lot of work (the ones with a lot of neighbors), some weren’t doing much work or even not at all. For example in the picture below, the blue particle is doing 4x work compared to the green particle.</p>
+
+<p><img src="/particles.png" alt="Particles" /></p>
+
+<p>Our proposed method focused on distributing the workload equivalently among all the threads at each step. We showed that the computation overhead occurring at each step is negligible compared to the achieved performance gain. We also showed the potential of this method as many multi-GPU simulation frameworks could benefit from this new method of load-balancing.</p>
+
+<p>We evaluated our model on NVIDIA GeForce RTX 2080 Ti for a dam break scenario of 1M particles where we gained 73% performance improvement over the baseline (with dynamic load-balance).</p>
+
+<h3 id="3-bithaa-hardware-assisted-arithmetic-support-for-bit-slice-computation"><strong>3. BitHAA: Hardware Assisted Arithmetic Support For Bit-Slice Computation</strong></h3>
+
+
+
+      </section>
+      <footer>
+        
+          <p>Project maintained by <a href="https://github.com/mhezarei">mhezarei</a></p>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+  </body>
+</html>
