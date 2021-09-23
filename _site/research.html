@@ -17,10 +17,10 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Mohammad Hosein Zarei" />
 <script type="application/ld+json">
-{"description":"Welcome to my personal website!","headline":"Mohammad Hosein Zarei","@type":"WebPage","url":"http://localhost:4000/research.html","@context":"https://schema.org"}</script>
+{"description":"Welcome to my personal website!","@type":"WebPage","headline":"Mohammad Hosein Zarei","url":"http://localhost:4000/research.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=ab1e52cc0675dd7005a48c58765c5a1a6ada5e77">
+    <link rel="stylesheet" href="/assets/css/style.css?v=1344b4bb2eca1b31f3572d8bcb69b4020bd66923">
     <script src="https://code.jquery.com/jquery-3.3.0.min.js" integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
     <script src="/assets/js/main.js"></script>
     <!--[if lt IE 9]>
@@ -62,38 +62,37 @@
         <p><a href="../">Back to Home</a></p>
 
 <h1 id="research"><font size="10"><center>Research</center></font></h1>
-<p><br /></p>
 
 <p>For as long as I remember, I’ve always had a catch for developing ideas and finding innovative ways to solve existing problems. Until now, I’ve taken part in 3 different publications, explained below.</p>
 
 <h3 id="fault-prediction-in-competitive-programming-codes"><font size="5"><center>Fault Prediction in Competitive Programming Codes</center></font></h3>
 
-<p>There exists a lot of publications in which the authors tried to predict or analyze the faulty (buggy) areas in some projects. The scope of these fault-detectors were bounded to the modules. Our idea originally was to create a system capable of identifying and reporting the faulty areas of a program using the <strong>line-level</strong> features.</p>
+<p>There are many publications in which the authors tried to predict or analyze the faulty (buggy) areas in some projects. The scope of these fault-detectors was bounded to the modules. Our idea originally was to create a system capable of identifying and reporting the faulty areas using the <strong>line-level</strong> features.</p>
 
-<p>Of course focusing the live-level features in a project as a whole is really difficult and that was why we focused our attention to a specific type of programs. Those written in only one file. Since there was no dataset available at the time (or at least we didn’t find any), we were compelled to create our own dataset and that’s where we chose the programs submitted to the <a href="http://codeforces.com">CodeForces</a> website.</p>
+<p>Of course, focusing the live-level features in a project as a whole is complicated, and that was why we focused our attention on a specific type of program—those written in only one file. Since there was no dataset available at the time (or at least we didn’t find any), we were compelled to create our dataset, and that’s where we chose the programs submitted to the <a href="http://codeforces.com">CodeForces</a> website.</p>
 
-<p>Our objective was to find faulty areas of a program and crawling every program in that website wouldn’t help at all. That’s why we only looked for programs which were <strong>Accepted</strong> by changing only a few lines. Yes! That was where the faults occurred.</p>
+<p>Our objective was to find faulty areas of a program, and crawling every program on that website wouldn’t help at all. That’s why we only looked for programs that were <strong>Accepted</strong> by changing only a few lines. Yes! That was where the faults occurred.</p>
 
-<p>The dataset was made up of pairs of programs, one program in each pair was the <strong>Wrong Answer</strong> and the other one was the <strong>Accepted</strong> version. Around 96,000 programs were gathered which each of their lines labeled as either “False” (where the line wasn’t faulty), and “True” (where the line was buggy).</p>
+<p>The dataset consisted of pairs of programs; one program in each pair was the <strong>Wrong Answer</strong>, and the other was the <strong>Accepted</strong> version. Around 96,000 programs were gathered which each of their lines was labeled as either “False” (where the line wasn’t faulty) and “True” (where the line was buggy).</p>
 
-<p>Different features were then extract from the programs to build up the final dataset. Both semantical features and program-specific features (such as number of operands in each line) were considered.</p>
+<p>Different features were then extracted from the programs to build up the final dataset. Both semantical features and program-specific features (such as the number of operands in each line) were considered.</p>
 
-<p>Finally, different machine learning models were used to predict the faulty areas in different/new programs and the best model achieved <strong>76% accuracy</strong>.</p>
+<p>Finally, different machine learning models were used to predict the faulty areas in new programs, and the best model achieved <strong>76% accuracy</strong>.</p>
 
 <h3 id="scalable-kernel-load-balancing-for-parallel-sph-simulation"><font size="5"><center>Scalable Kernel Load-Balancing for Parallel SPH Simulation</center></font></h3>
 
-<p>The <a href="https://en.wikipedia.org/wiki/Smoothed-particle_hydrodynamics">Smoothed Particle Hydrodynamics</a> is a method which tries to simulate the fluid flows and observe their behavior. Typically, a scenario is defined to help the simulation progress. One common scenario is called the “Dam Break” in which a fluid is kept behind a dam and released in order to start the simulation. Factors like fluid density, gravity, particle weight, etc control the simulation.</p>
+<p>The <a href="https://en.wikipedia.org/wiki/Smoothed-particle_hydrodynamics">Smoothed Particle Hydrodynamics</a> method trying to simulate the fluid flows and observe their behavior. Typically, a scenario is defined to help the simulation progress. One standard procedure is called the “Dam Break,” where a fluid is kept behind a dam and released to start the simulation. Factors like fluid density, gravity, or particle weight control the simulation.</p>
 
-<p>SPH is a “meshfree” method meaning no pre-defined connection is required between the particles. This is what makes Graphics Processing Units (GPUs) one of the best environments to run the simulation on since every particle can be mapped to a thread. Most of the researches at the time were focused on how to load-balance the simulation when ran on multiple GPUs and none (at least to our knowledge) focused on load-balancing in the thread-level. That’s what made our work unique.</p>
+<p>SPH is a “meshfree” method meaning no pre-defined connection is required between the particles. This makes Graphics Processing Units (GPUs) one of the best environments to simulate this problem since every particle can be mapped to a thread. At the time, most researches were focused on load-balancing the simulation running on multiple GPUs, and none (at least to our knowledge) focused on load-balancing at the thread level. That’s what made our work unique.</p>
 
 <p>The simulation procedure is mainly made from these steps:</p>
 <ol>
-  <li>Each particle computes the total amount of force it is receiving (including gravity, forces from neighboring particles).</li>
+  <li>Each particle computes the total force it receives (including gravity, forces from neighboring particles).</li>
   <li>Each particle then moves (based on a time step) towards the direction of the total force.</li>
-  <li>After every particle is moved, new frame is present and the procedure repeats until either some number of frames is reached, or the total force done to each particle is 0.</li>
+  <li>After every particle is moved, a new frame is present, and the procedure repeats until either a specific number of frames is reached or the total force done to each particle is zero.</li>
 </ol>
 
-<p>The problem with high-level load-balancing was that most of the time, particles were much more dense in some areas than the others and this made the workload unequivalently distributed among the threads. Therefore, some threads were doing a lot of work (the ones with a lot of neighbors), some weren’t doing much work or even not at all. For example in the picture below, the blue particle is doing 4x work compared to the green particle.</p>
+<p>The problem with high-level load-balancing was that particles were much denser in some areas than others, making the workload distribution among the threads not equivalent. Some threads were doing lots of work (ones with many neighbors), and some weren’t doing much work or even none at all. For example, the blue particle is doing 4x work compared to the green particle in the picture below.</p>
 
 <p><img src="/particles.png" alt="Particles" /></p>
 
@@ -103,23 +102,23 @@
 
 <h3 id="bithaa-hardware-assisted-arithmetic-support-for-bitslice-computation"><font size="5"><center>BitHAA: Hardware Assisted Arithmetic Support For BitSlice Computation</center></font></h3>
 
-<p>First Introduced in 1997 (<a href="https://www.cs.technion.ac.il/users/wwwb/cgi-bin/tr-get.cgi/1997/CS/CS0891.pdf">Article Link</a>), BitSlicing is a technique whose purpose is to speed up computation through paralleled computation. The idea is instead of keeping M N-bit data in M registers (like we normally do), we create a register for each of those N bits. Therefore, we will have N M-bit registers. This image explains the concept:</p>
+<p>First Introduced in 1997 (<a href="https://www.cs.technion.ac.il/users/wwwb/cgi-bin/tr-get.cgi/1997/CS/CS0891.pdf">Article Link</a>), BitSlicing is a technique whose purpose is to speed up computation through paralleled computation. The idea is instead of keeping M N-bit data in M registers (like we usually do), we create a register for each of those N bits. Therefore, we will have N M-bit registers. This image explains the concept:</p>
 
-<p><img src="./bitslice.png" alt="Bitslice" /></p>
+<p><img src="/bitslice.png" alt="Bitslice" /></p>
 
-<p>This approach can work amazingly for some application like logical operations, or software implementation of the DES cipher (where Eli Bihem gained 5x speed up). But more complex operations such as addition or multiplication are not suited for this method. With the improvement of microprocessors, the BitSlicing idea was forgotten.</p>
+<p>This approach can work amazingly for applications like logical operations or the DES cipher software implementation (where Eli Bihem gained 5x speedup). But more complex operations such as addition or multiplication are not suited for this method. With the improvement of microprocessors, the BitSlicing idea was forgotten.</p>
 
 <p>In this work, we offer a software-based SIMD model for the embedded CPUs. Our hardware-assisted framework provides a computation infrastructure for the BitSlice execution capable of executing single-bit SIMD operations. Our framework also supports arithmetic operations efficiently.</p>
 
-<p>The BitHAA framework is composed of a front-end and a backend. In the front-end section, it provides a software API for user interface programming by utilizing LLVM and compile-time modifications of the input code. In its backend, BitHAA presents high-performance and efficient bit-serial arithmetic operations to be used in real-world applications.</p>
+<p>The BitHAA framework is composed of a front-end and a back-end. The front-end section provides a software API for user interface programming by utilizing LLVM and compile-time modifications of the input code. The back-end part presents high-performance and efficient bit-serial arithmetic operations to be used in real-world applications.</p>
 
-<p>We evaluated our framework on an open-source RISC-V processor and compared it to the state-of-the-art SIMD and SIMT platforms in the embedded systems. The results show that BitHAA is more efficient in area overload and power consumption, compared to the recent developments. The flow of BitHAA’s sub-system can be seen in the following image:</p>
+<p>We evaluated our framework on an open-source RISC-V processor and compared it to the embedded systems’ state-of-the-art SIMD and SIMT platforms. The results show that BitHAA is more efficient in area overload and power consumption than in recent developments. The flow of BitHAA’s sub-system can be seen in the following image:</p>
 
-<p><img src="./bithaa.png" alt="BitHAA" /></p>
+<p><img src="/bithaa.png" alt="BitHAA" /></p>
 
-<p>Specifically, my task was to develop various real-world applications using the BitHAA framework in order to showcase the performance increase that it provides. I developed the LeNet-5, RNN, and LSTM networks, the SHA-256 (cryptography), and the sobel edge detection (image processing) which gained <strong>2.03x</strong>, <strong>2.06x</strong>, and <strong>3.99x</strong> performance increase respectively.</p>
+<p>Specifically, my task was to produce various real-world applications using the BitHAA framework to showcase the performance increase. I developed the LeNet-5, RNN, and LSTM networks, the SHA-256 (cryptography), and the Sobel edge detection (image processing), which gained <strong>2.03x</strong>, <strong>2.06x</strong>, and <strong>3.99x</strong> performance increase, respectively.</p>
 
-<p>For each application, I first had to implement and make sure of its accuracy. Then, I had to specifically change my code for it to be used with the BitHAA framework. All codes were written in C++.</p>
+<p>For each application, I first had to implement and make sure of its accuracy. Then, I had to specifically change my code for it to be used with the BitHAA framework. All programs were written in C++.</p>
 
 
       </section>

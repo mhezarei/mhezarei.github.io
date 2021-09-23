@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Mohammad Hosein Zarei | Welcome to my personal website!</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Mohammad Hosein Zarei" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Welcome to my personal website!" />
+<meta property="og:description" content="Welcome to my personal website!" />
+<link rel="canonical" href="http://localhost:4000/projects.html" />
+<meta property="og:url" content="http://localhost:4000/projects.html" />
+<meta property="og:site_name" content="Mohammad Hosein Zarei" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Mohammad Hosein Zarei" />
+<script type="application/ld+json">
+{"description":"Welcome to my personal website!","@type":"WebPage","headline":"Mohammad Hosein Zarei","url":"http://localhost:4000/projects.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=1344b4bb2eca1b31f3572d8bcb69b4020bd66923">
+    <script src="https://code.jquery.com/jquery-3.3.0.min.js" integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
+    <script src="/assets/js/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+
+      <header>
+        <h1>Mohammad Hosein Zarei</h1>
+        <p>Welcome to my personal website!</p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/mhezarei/mhezarei.github.io" class="button fork"><strong>View On GitHub</strong></a>
+        
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <p><a href="../">Back to Home</a></p>
+
+<h1 id="projects"><font size="10"><center>Projects</center></font></h1>
+
+<p>Throughout my academic journey, I’ve developed many projects in different fields of Computer Science. Most of them were course final projects, but I’ve always tried to create them the best way possible. Here I’ll briefly explain some selected projects in no particular order.</p>
+
+<h3 id="elevator-controller-system"><font size="5"><center>Elevator Controller System</center></font></h3>
+
+<p>This was the final project for the “Embedded and Real Time Systems” course. Here we were assigned to design an elevator controller system that was supposed to control an actual elevator with multiple floors and different considerations. Everything in this project (except the simulation) was done via MATLAB Simulink.</p>
+
+<p>We started by writing the requirements of this system. We had many considerations, including:
+Pushing an irrelevant button while moving (doors closed).
+Queuing the pressed floor buttons.
+Elevator velocity management.
+, etc.</p>
+
+<p>After that, we made the system’s model composed of different sub-modules like button handler, velocity handler, and floor management. To ensure the systems are functioning well and have no failure points, we wrote unit tests for every unit available in the system’s program.</p>
+
+<p>Then, we simulated the whole project on an Arduino board. Since we didn’t have access to the physical boards, we used the <a href="https://www.tinkercad.com/">TinkerCAD</a> website.</p>
+
+<p><strong>Keywords:</strong> Embedded Systems, Arduino, MATLAB, MATLAB Simulink, TinkerCAD</p>
+
+<h3 id="social-distancing-detector"><font size="5"><center>Social Distancing Detector</center></font></h3>
+
+<p>This was the final project for the “Fundamentals of Computer Vision” course. The course professor didn’t specify the subject of the project, and we had to choose an area of Computer Vision ourselves. After thinking about various problems, we came up with a system that eventually tried to identify the distance between people and alert when many people were close to each other.</p>
+
+<p>The task consisted of two main sections. First, we needed to identify the “Person” object in the images, and then we had to project the camera space to find the actual distances. For safety measures, the system was sensitive to distances more than 2 meters.</p>
+
+<p>We tried several Deep Learning models such as YOLO (and its variants), R-CNN (and its variants), and SSD for the person identification part. In need of faster inference time, we chose YOLOv3.</p>
+
+<p>After identifying individuals in input images, we had to understand the distance between each one of them. Since the camera is almost always angled, we must understand how the input image gets mapped to the real-life scene. To do so, we changed our point of view in the “bird’s eye view.” The only necessary processing was to know where the coordinations of the input image were. To do that, the user must input 7 points before the program starts: 4 of those are the 4 points of the rectangle in which people are walking. The other 3 demonstrate the distance between points, they should make a right-angled triangle, and each of the right-angled sides should be around 1 meter.</p>
+
+<p>Here is an example of our system in action:</p>
+
+<p><img src="/people.png" alt="People" /></p>
+
+<h3 id="ai-bot-contest"><font size="5"><center>AI-bot Contest</center></font></h3>
+
+<p>In Feb 2021, <a href="ai-bot.ir">AI-bot</a> was held nationwide. The goal was to create a virtual assistant (like Google Assistant or Amazon Alexa) with a much more constrained problem space. The system had to answer questions in only four types: Time, Date, Calendar Occasions, and Religious Times. Three of my friend and I participated in the contest, and our final model achieved 76% accuracy (ranked 6th) in answering the questions.</p>
+
+<p>The problem had multiple parts. Here is the general flow of the system:</p>
+
+<ol>
+  <li>
+    <p>Identify the type of question <br /> We treated the task as a text classification one and used a combination of an LSTM model and rule-based processing. For instance, if we saw the work “ساعت” (meaning “clock, watch” in English), this question had more chance belonging to the Time group.</p>
+  </li>
+  <li>
+    <p>Extract the name entities such as cities or events <br /> This was done with a “Name Entity Recognition” model based on the BERT model and fine-tuned for the Persian language.</p>
+  </li>
+  <li>
+    <p>Finding the answer <br /> After finding all the information needed using the steps mentioned above, we extracted the required information (the calendar event of one specific day, for example) through provided APIs using Python scripts.</p>
+  </li>
+  <li>
+    <p>Finalizing the result <br /> To provide a basis for comparing all the participants, we had to give answers within a specific format made up of the type of the answer, the entities, and the answer itself. After submitting the solution, a 0/1 grade would be assigned to each answer, which made up the accuracy score.</p>
+  </li>
+</ol>
+
+<h3 id="study-of-path-finding-algorithms-on-e-puck-robots"><font size="5"><center>Study of Path Finding Algorithms on E-puck Robots</center></font></h3>
+
+<p>This was the final project for the “Fundamentals of Robotics” course. In this course, we were introduced to the “Bug” family of pathfinding algorithms. We were asked to implement and compare the Bug0, Bug1, and Bug2 algorithms in the final project. After that, we had to implement another algorithm chosen from <a href="https://arxiv.org/abs/1808.05050">this paper</a>.</p>
+
+<p>First off, I needed to get more familiar with the We-bots simulation application. After reading its documentation and knowing what each sensor or actuator does, I had a good grasp of the whole thing. Next, the algorithm implementation began; I wrote all four algorithms in Python and tested them with various scenarios/environments. Then I compared the algorithms and wrote each one’s advantages or disadvantages in each specific scenario.</p>
+
+<p>After completing this part, we were asked to manipulate the robot’s kinematic model. We had to add gaussian noise to the robot’s wheels based on their rotation and compare the results again. The goal of this section was to emphasize the additive error in the wheels by adding more barriers to the environment.</p>
+
+<p>For the last step, we had to compare two localization methods: GPS and localization through odometry, which was an easy part.</p>
+
+<h3 id="bittorrent-similar-network"><font size="5"><center>BitTorrent-similar Network</center></font></h3>
+
+<p>This was the final project for the “Computer Networks” course. Here we had to implement and test a P2P network like BitTorrent. Each node in this network had first to contact the tracker to exchange essential information and then start transferring the packets. We chose Python for our programming language, and since we were simulating a network, all connections were established via sockets. There was an extra grade for implementing large files and sending/receiving files simultaneously, which we implemented.</p>
+
+<p>Each node was able to do three actions: Upload, Download, and Exit. Of course, before actually transferring the packets, each node had to contact the tracker to understand the current state of the network. After telling the tracker, each node is added to either the “owners” list (the ones uploading files) or is considered a receiver node.</p>
+
+<p>After getting the “owners” list, the receiver node finds out the size of its requested file and begins its transfer. Each of the uploaders in the list will upload some portion of that file to the receiver. Each of them is done in a thread. After every thread is done, the file is glued together and saved.</p>
+
+
+      </section>
+      <footer>
+        
+          <p>Project maintained by <a href="https://github.com/mhezarei">mhezarei</a></p>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+  </body>
+</html>
