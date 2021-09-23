@@ -6,7 +6,7 @@ With an extensive background in the AI field, I'm more interested in domains whe
 
 I'm also much interested and capable in problems that precisely lie in the Deep Learning area.
 
-This website acts as a detailed version of [my CV](./CV.pdf), where I explain my academic career and projects. Here are different sections of my website:
+This website acts as a detailed version of [my CV](./CV.pdf), where I explain my academic career and projects. Here are different sections of this website:
 
 - [About me](./)
 - [Education](./education)
@@ -19,4 +19,4 @@ This website acts as a detailed version of [my CV](./CV.pdf), where I explain my
 
 Also, my current unofficial transcripts are available [here](./transcripts.pdf).
 
-<font size="2" style="float: right;">Last Updated: September 23, 2021</font>
+<font size="2" style="float: right;">Last Update: <b>September 23, 2021</b></font>
